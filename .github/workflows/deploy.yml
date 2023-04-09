@@ -1,15 +1,17 @@
 name: Deploy to Cloudflare
 
+concurrency: 
+  group: production
+  cancel-in-progress: true
+
 on:
   push:
     branches:
       - main
-  pull_request:
-    branches:
-      - main
+  workflow_dispatch:
 
 jobs:
-  ci:
+  deploy:
     runs-on: ${{ matrix.os }}
 
     strategy:
