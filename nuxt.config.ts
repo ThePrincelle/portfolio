@@ -5,7 +5,8 @@ export default defineNuxtConfig({
       '@nuxt/content',
       '@nuxtjs/color-mode',
       '@nuxtjs/tailwindcss',
-      'nuxt-icons'
+      'nuxt-icons',
+      'nuxt-headlessui'
     ],
     content: {
       // https://content.nuxtjs.org/api/configuration
