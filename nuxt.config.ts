@@ -5,13 +5,9 @@ export default defineNuxtConfig({
       '@nuxt/content',
       '@nuxtjs/color-mode',
       '@nuxtjs/tailwindcss',
-      '@nuxt/image-edge',
       'nuxt-icons'
     ],
     content: {
       // https://content.nuxtjs.org/api/configuration
-    },
-    image: {
-      dir: 'assets/images'
     }
 })
