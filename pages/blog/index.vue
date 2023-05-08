@@ -1,11 +1,23 @@
 <script setup lang="ts">
+import type { MarkdownParsedContent } from '@nuxt/content/dist/runtime/types'
+
+interface BlogPostParsedContent extends MarkdownParsedContent {
+    _path: string,
+    date: string,
+    title: string,
+    tags: string[] | null,
+    published: boolean
+};
+
 const filterTag = ref<string | null>(null)
 
-const { data, refresh, pending, error } = await useAsyncData('blog', () => queryContent('/blog').where({
-    // where date is not null and date is under now
+const { data, refresh, pending, error } = await useAsyncData('blog', () => queryContent<BlogPostParsedContent>('/blog').where({
+    // @ts-ignore line below is valid JS
     date: { $ne: null },
     published: true,
     // if filterTag is not null, check if tags contains filterTag
+    // Ignore type error, it's a bug in the types
+    // @ts-ignore line below is valid JS
     tags: filterTag.value ? { $contains: filterTag.value } : { $ne: null }
 }).sort({ date: -1 }).find());
 
