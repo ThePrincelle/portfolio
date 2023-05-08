@@ -20,7 +20,8 @@
                 <div class="justify-center py-24 sm:py-64">
                     <h1 class="mt-2 mb-0 text-3xl font-bold tracking-tight text-gray-900 sm:text-5xl">Article vide
                     </h1>
-                    <p class="mt-4 text-base leading-7 text-gray-600">Désolé, l'article semble être vide, revenez plus tard, on sait jamais...</p>
+                    <p class="mt-4 text-base leading-7 text-gray-600">Désolé, l'article semble être vide, revenez plus tard,
+                        on sait jamais...</p>
                     <div class="mt-6">
                         <nuxt-link to="/blog" as="a"
                             class="text-sm font-semibold leading-7 text-blue-600 no-underline inline-flex items-center">
@@ -46,4 +47,5 @@
                 </div>
             </template>
         </ContentDoc>
-</main></template>
+    </main>
+</template>
